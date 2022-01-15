@@ -7,10 +7,8 @@ import 'package:hexcolor/hexcolor.dart';
 import 'package:provider/src/provider.dart';
 
 class PinCodeCreateUI extends StatelessWidget {
-  PinCodeCreateUI({Key? key}) : super(key: key);
+  const PinCodeCreateUI({Key? key}) : super(key: key);
 
-  String _otp = "";
-  var _otpSymbols = ['\u{25CB}', '\u{25CB}', '\u{25CB}', '\u{25CB}'];
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +82,7 @@ class PinCodeCreateUI extends StatelessWidget {
                       child: Text(
                         context.watch<PinUi>().getOtpSymbolsByIndex(0),
                         style: const TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.normal),
+                            fontSize: 15, fontWeight: FontWeight.w200, color: Colors.indigo),
                       ),
                     ),
                     Padding(
@@ -92,7 +90,7 @@ class PinCodeCreateUI extends StatelessWidget {
                       child: Text(
                         context.watch<PinUi>().getOtpSymbolsByIndex(1),
                         style: const TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.w200),
+                            fontSize: 15, fontWeight: FontWeight.w200, color: Colors.indigo),
                       ),
                     ),
                     Padding(
@@ -100,7 +98,7 @@ class PinCodeCreateUI extends StatelessWidget {
                       child: Text(
                         context.watch<PinUi>().getOtpSymbolsByIndex(2),
                         style: const TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.w200),
+                            fontSize: 15, fontWeight: FontWeight.w200, color: Colors.indigo),
                       ),
                     ),
                     Padding(
@@ -108,7 +106,7 @@ class PinCodeCreateUI extends StatelessWidget {
                       child: Text(
                         context.watch<PinUi>().getOtpSymbolsByIndex(3),
                         style: const TextStyle(
-                            fontSize: 15, fontWeight: FontWeight.w200),
+                            fontSize: 15, fontWeight: FontWeight.w200, color: Colors.indigo),
                       ),
                     )
                   ],
@@ -119,7 +117,7 @@ class PinCodeCreateUI extends StatelessWidget {
           //Digit keys
           Expanded(
             flex: 3,
-            child: DigitKeyboard(),
+            child: DigitKeyboard(true),
           ),
         ],
       ),
